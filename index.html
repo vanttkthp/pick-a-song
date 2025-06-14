@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random US/UK Song Picker</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #fbd38d;
+      color: #333;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #f6ad55;
+    }
+    .song {
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fefcbf;
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎶 Random US/UK Song 🎧</h1>
+    <button onclick="getRandomSong()">Pick a Song</button>
+    <div class="song" id="songDisplay">Your song will appear here!</div>
+    <div class="footer">
+  Created by <a href="https://fb.com/dcv.16" target="_blank" style="color: #fbd38d; text-decoration: none;">@daocongvann</a>
+</div>
+
+  </div>
+
+  <script>
+    const songs = [
+      "Bohemian Rhapsody - Queen",
+      "Shape of You - Ed Sheeran",
+      "Blinding Lights - The Weeknd",
+      "Rolling in the Deep - Adele",
+      "Smells Like Teen Spirit - Nirvana",
+      "Bad Guy - Billie Eilish",
+      "Uptown Funk - Bruno Mars ft. Mark Ronson",
+      "Someone Like You - Adele",
+      "Stay With Me - Sam Smith",
+      "Let Her Go - Passenger",
+      "Perfect - Ed Sheeran",
+      "Counting Stars - OneRepublic",
+      "Take Me To Church - Hozier",
+      "Radioactive - Imagine Dragons",
+      "Can't Stop the Feeling! - Justin Timberlake",
+      "Shake It Off - Taylor Swift",
+      "Sorry - Justin Bieber",
+      "Senorita - Shawn Mendes & Camila Cabello",
+      "Levitating - Dua Lipa",
+      "As It Was - Harry Styles"
+    ];
+
+    function getRandomSong() {
+      const index = Math.floor(Math.random() * songs.length);
+      const song = songs[index];
+      document.getElementById('songDisplay').textContent = `🎵 ${song}`;
+    }
+  </script>
+</body>
+</html>
